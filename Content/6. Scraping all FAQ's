@@ -1,0 +1,226 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 132,
+   "id": "922dfb87",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import requests\n",
+    "from bs4 import BeautifulSoup\n",
+    "\n",
+    "link = 'https://www.elitetechnogroups.com/internship/advance-python-internship-cum-training-program.php'\n",
+    "res = requests.get(link)\n",
+    "\n",
+    "soup = BeautifulSoup(res.text, 'html.parser')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 141,
+   "id": "82d7eb35",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "7"
+      ]
+     },
+     "execution_count": 141,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "soup.find_all('div', class_ = 'card faqcategory')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 171,
+   "id": "8042d291",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Course Curriculum  ( 8 Questions )\n",
+      " 1. I have no prior knowledge, can I take this internship?  We understand you are starting your learning journey. Hence, the program is designed to cover the basics - good for even folks with prior knowledge. The only prerequisites are that you understand physics and maths taught till 12th standard or diploma.\n",
+      " 2. What's the difference between an Internship and Certified course?  An Internship is for college students to learn the basics of the Industry. A good starting platform to meet the university's internship requirement along with real learnings.\n",
+      "Whereas a Course is much detailed program on the technologies used in the industry. It has industrial projects, much more detailed content, an LoR and career-related sessions. It is meant for students and industry folks who are looking to upgrade themselves for jobs or higher studies.\n",
+      " 3. What do I have to do to enroll for the internship and how will i get the content access?  Once you have registered for the internship and paid for it, we will share with you the login details to study the portal of Elite Techno Groups where you can access the content. \n",
+      " 4. Mode of the internship- would it be live or pre- recorded session?  It is a combination of recorded and live interactive sessions with the Experts. Internship content is delivered via recorded videos so that you can have them all the time with you. These will help you plan your learning accordingly given the uncertainties in the college opening and exams!\n",
+      " 5. Which all Software will you teach?  You will be learning -\n",
+      "Solidworks For Design, FEA and other analysis,\n",
+      "Lotus for suspension analysis,\n",
+      "Ansys Fluent for CFD, and\n",
+      "Ansys for FEA\n",
+      " 6. Will the software be genuine or cracked?  If you don't have the software, you can download the software from open-source online sources. Given the minimal fees, the software isn't included in the fees.\n",
+      " 7. I don't know how to use Software (any name), how will you teach?  No problem at all. We will teach you from scratch. It doesn't matter if you haven't used any CAD software. Designing will be starting from very basic things like- learning of all the commands used in it, after that we will be teaching you how to design the subsystems as you continue with the course.\n",
+      " 8. Will there also be practical classes in this course?  Yes, in fact, the whole course is practically based. Practical means which you practice which could be either Hands-on or on Computer. In the Automotive Industry, work is divided into 2 major domains.\n",
+      "1. Engineers who design the vehicles by doing the research as per the market need - vehicle dynamics & design engineer - 80% of Engineers required in this space\n",
+      "2. Engineers in manufacturing unit - an automated and outsourced process - require 20% of engineers.The focus of this course is on the 80% requirement where we will teach you the design and development of commercial and race vehicles from scratch.\n",
+      "----------------------------------------------------------------------------------------------------\n",
+      "Doubt & Career Support  ( 4 Questions )\n",
+      " 1. What if I have doubts during or after internship?\t  We think doubt resolution is the most important part of an internship. Hence, we've three channels for you to get your doubts resolved- \n",
+      "1. Ask us doubt on the Video platform itself and we will reply to you there\n",
+      "2. A chat group for doubt resolution, you could ask us there\n",
+      "3. Live doubt resolution sessions, you could ask your doubts there too!After the internship:  Definitely, you will have plenty of doubts after the internship and for that, we provide you with a dedicated email id of our experts, you can get their assistance through the mail to clarify all your issues.\n",
+      " 2. What Career Assistance do you provide during the internship?\t  We provide you LinkedIn profile sessions that can help you in your placements.\n",
+      " 3. Do you provide job or other internships in automotive companies?\t  Getting a job depends on multiple factors apart from your technical skills like aptitude skills and the company's requirements. This internship helps you build your technical skills. Also, most students don't just stop here. They go ahead and participate in various activities, competitions, and research which makes them industry ready! This is the first important step in your career journey to push you to become industry-ready.\n",
+      " 4. Will you help me after internship completion?\t  Yes, we will provide you support for 6 months.\n",
+      "----------------------------------------------------------------------------------------------------\n",
+      "Certification  ( 7 Questions )\n",
+      " 1. What all certificates will I get with this internship?  You will get a Completion Certificate and a Project Report.\n",
+      " 2. When will we get our certificate and performance report?\t  The certificate of participation will be issued at the end of the internship period.The performance report will be sent on the completion of the internship.Completion means you should have watched all the videos, attempted all the quizzes and the projects.\n",
+      " 3. How will you decide top performers?  The top performers are the ones who have scored above 85% overall across all quizzes and projects.\n",
+      " 4. Do we have to clear any test/ exam to get the certificate?  We don't conduct any tests before we issue you a certificate. You have to watch all the tutorials and classes shared by us to get the certificate.\n",
+      " 5. Will you provide/ post me a hard copy of the certificate?  We will provide you an international (UK) accredited e-certificate with an online unique verification number that your college or company you will be working with can use to check your certificate details online, a lifetime. Additionally, you can take a print of your certificate from anywhere.\n",
+      " 6. What is the accreditation of the certificate and is it verifiable by a company/college?  We will provide you an international (UK) accredited e-certificate with an online unique verification number that your college or company you will be working with can use to check your certificate details online, a lifetime. Additionally, you can take a print of your certificate from anywhere.\n",
+      " 7. Is there any proof or anything written on the certificate about the projects we worked on?  Along with the certificate, you will be provided a Project Report which will have details like your work in the project, skills learned, etc. of all the projects and assignments done by you.\n",
+      "----------------------------------------------------------------------------------------------------\n",
+      "Eligibility Criteria  ( 4 Questions )\n",
+      " 1. I'm a fresher/ have no background in Automotive. Can I take this internship?\t  In that case, there are more reasons for you to take this internship! This internship is prepared from the basics. We will take you through the fundamentals of building a good understanding of automotive engineering. This will make you ready to take up tougher challenges in this space!\n",
+      " 2. I don't have a laptop, is it mandatory?   We believe something is better than nothing. 60% of concepts are based on calculations and the 40 percent part is based on design. So, even if you are unable to practice the designing part on a laptop, as you don't have one. No worries! These sessions will be there for you at least for 6 months. So, once your college starts, and you will have access to the CAD lab or any laptop, you can rewatch the sessions and practice.\n",
+      " 3. What is the Laptop Configuration?  Minimum RAM: 4 GB\n",
+      "Minimum Processor - i3 could work, i5 and above is recommended (Intel Processor)\n",
+      "If AMD Processor - A6 could work, however above it would be better\n",
+      "Recommended - Have an external mouse during design courses\n",
+      " 4. Is there any minimum qualification required to take this internship?  To be eligible for the Internship, the following criteria need to be fulfilled:\n",
+      "Education Requirement: Should be able to understand Physics and Mathematics of Std. 12th and equivalent program (Diploma/other)\n",
+      "Course Program: You should successfully complete the Internship.\n",
+      "----------------------------------------------------------------------------------------------------\n",
+      "Fee-Offers-Referral Cashback  ( 5 Questions )\n",
+      " 1. What is Money Back Guarantee?\t  Money-back within 10-days of attending the internship if you feel that this internship isn't good and there is another one better than this at a lower price. Show us the other internship and we will give you the money back.\n",
+      " 2. Is EMI Options Available?  Yes. EMI is available.\n",
+      " 3. Who are indian and Abroad Students according to you? Do you have International Payment Option available?  Any student studying in India and nationality Indian is an Indian Student. Every other student comes under 'Abroad'. Yes, you can pay in USD i.e. US Dollars ($)\n",
+      " 4. Many other companies are providing similar internships. Why should i go for your internship?\t  We help students with cutting edge technologies by Experts from top Industry experts. Frankly speaking, no-one in India is providing such a detailed internship at the prices we’re offering. \n",
+      "Also, we're making a promise, if you find an internship more detailed given with better services than ours and at a lower cost, we will refund your whole amount :) \n",
+      " 5. Is there any limit for Referrals?  No, there is no limit both in terms of the number and amount of referrals. You can share with as many friends as you wish to.\n",
+      "----------------------------------------------------------------------------------------------------\n",
+      "Projects & Assignments  ( 2 Questions )\n",
+      " 1. What types of projects will I work on during my internship?\t  After completion of every module (6-9 videos), you will be given one industry-related project on major concepts you have learned in that particular module.\n",
+      " 2. Is it compulsory to do the projects during the internship?\t  Yes, it is compulsory to do the projects during the internship as the projects will be graded.\n",
+      "----------------------------------------------------------------------------------------------------\n",
+      "Time Commitment  ( 4 Questions )\n",
+      " 1. How much time do I need to commit to the internship daily? How long does it take to complete the internship ?\t  You will receive tutorial videos of 30-40 minutes every day.\n",
+      "If you have exams or other commitments and miss any video/ assignment you can attempt it later as per your ease because you will have access to the internship for 6 months.\n",
+      "Time to completion can vary based on your schedule, but most learners are able to complete it within the internship period itself.\n",
+      " 2. I’m not sure about my college opening dates. How should I plan this internship? How can I manage my internship during exams?\t  This internship is designed keeping in mind the uncertainties & exams around the academics.\n",
+      "All the sessions will be saved in your login panel for 6 months so you can watch them anytime as per your convenience. You can start the internship now. There will be regular doubt sessions and assignment reviews to ensure you don't miss out on anything.\n",
+      " 3. Due to this corona uncertainty, I am not sure when my college will reopen, how can I continue with my internship after that?\t  We understand the uncertainty due to Corona and for that, we have introduced a 60 days Course Pause feature. Through this, you can pause and extend your internship for up to 60 days and easily continue with your college and semester exams, even if the college reopens in between the internship.\n",
+      " 4. At what time in the day will I get the Videos?  You will get the video at the start of the given day i.e. midnight 12:00 AM.\n",
+      "----------------------------------------------------------------------------------------------------\n"
+     ]
+    }
+   ],
+   "source": [
+    "for sp in soup.find_all('div', class_ = 'card faqcategory'):\n",
+    "    print(sp.find('h2').text[:-11], \"(\", sp.find('h2').text[-11:],\")\")\n",
+    "\n",
+    "    lst = []\n",
+    "    for s in sp.find_all('div', class_= 'card faq'):\n",
+    "        for txt in s.text.split('\\r'):\n",
+    "            print(txt.replace('\\n',''))\n",
+    "#         lst.append(s.text)\n",
+    "        \n",
+    "    print(\"-\"*100)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 168,
+   "id": "f8ba2540",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " 1. How much time do I need to commit to the internship daily? How long does it take to complete the internship ?\t  You will receive tutorial videos of 30-40 minutes every day.\n",
+      "If you have exams or other commitments and miss any video/ assignment you can attempt it later as per your ease because you will have access to the internship for 6 months.\n",
+      "Time to completion can vary based on your schedule, but most learners are able to complete it within the internship period itself.\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in lst[0].split('\\r'):\n",
+    "    print(i.replace('\\n',''))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 153,
+   "id": "b805aca4",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Course Curriculum '"
+      ]
+     },
+     "execution_count": 153,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "title"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 154,
+   "id": "a858a613",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'8 Questions'"
+      ]
+     },
+     "execution_count": 154,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "qns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0e96cd57",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

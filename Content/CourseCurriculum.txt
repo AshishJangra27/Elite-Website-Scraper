@@ -1,0 +1,15 @@
+ 1. I have no prior knowledge, can I take this internship?  We understand you are starting your learning journey. Hence, the program is designed to cover the basics - good for even folks with prior knowledge. The only prerequisites are that you understand physics and maths taught till 12th standard or diploma.
+ 2. What's the difference between an Internship and Certified course?  An Internship is for college students to learn the basics of the Industry. A good starting platform to meet the university's internship requirement along with real learnings.
+Whereas a Course is much detailed program on the technologies used in the industry. It has industrial projects, much more detailed content, an LoR and career-related sessions. It is meant for students and industry folks who are looking to upgrade themselves for jobs or higher studies.
+ 3. What do I have to do to enroll for the internship and how will i get the content access?  Once you have registered for the internship and paid for it, we will share with you the login details to study the portal of Elite Techno Groups where you can access the content. 
+ 4. Mode of the internship- would it be live or pre- recorded session?  It is a combination of recorded and live interactive sessions with the Experts. Internship content is delivered via recorded videos so that you can have them all the time with you. These will help you plan your learning accordingly given the uncertainties in the college opening and exams!
+ 5. Which all Software will you teach?  You will be learning -
+Solidworks For Design, FEA and other analysis,
+Lotus for suspension analysis,
+Ansys Fluent for CFD, and
+Ansys for FEA
+ 6. Will the software be genuine or cracked?  If you don't have the software, you can download the software from open-source online sources. Given the minimal fees, the software isn't included in the fees.
+ 7. I don't know how to use Software (any name), how will you teach?  No problem at all. We will teach you from scratch. It doesn't matter if you haven't used any CAD software. Designing will be starting from very basic things like- learning of all the commands used in it, after that we will be teaching you how to design the subsystems as you continue with the course.
+ 8. Will there also be practical classes in this course?  Yes, in fact, the whole course is practically based. Practical means which you practice which could be either Hands-on or on Computer. In the Automotive Industry, work is divided into 2 major domains.
+1. Engineers who design the vehicles by doing the research as per the market need - vehicle dynamics & design engineer - 80% of Engineers required in this space
+2. Engineers in manufacturing unit - an automated and outsourced process - require 20% of engineers.The focus of this course is on the 80% requirement where we will teach you the design and development of commercial and race vehicles from scratch.

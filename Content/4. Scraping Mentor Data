@@ -1,0 +1,146 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 132,
+   "id": "f180a68d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import requests\n",
+    "from bs4 import BeautifulSoup\n",
+    "\n",
+    "link = 'https://www.elitetechnogroups.com/internship/advance-python-internship-cum-training-program.php'\n",
+    "res = requests.get(link)\n",
+    "\n",
+    "soup = BeautifulSoup(res.text, 'html.parser')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 133,
+   "id": "4e437081",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "lst1 = []\n",
+    "\n",
+    "for sp in soup.find_all('div',class_ = 'testimonial-name'):\n",
+    "    lst1.append(sp.text)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 134,
+   "id": "69ffe3b0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "lst2 = []\n",
+    "\n",
+    "for sp in soup.find_all('div',class_ = 'testimonial-content'):\n",
+    "    lst2.append(sp.text)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 129,
+   "id": "017a2092",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Karthikeyan Rajendran \n",
+      "Data Scientist \n",
+      "\n",
+      "  Over 11+ years of IT experience with specialization in Data Science, Machine Learning and Chatbots. Skilled in GCP(BigQuery, DataStudio, Vertex AI), DialogFlow, H2O, Tableau, TensorFlow.  \n",
+      "----------------------------------------------------------------------------------------------------\n",
+      "\n",
+      "Ashish Jangra \n",
+      "Autonomous Vehicle, AI, IoT Consultant \n",
+      "\n",
+      " Developed his own Autonomous Vehicle from scratch, an AI Specialist and Educationalist. Worked on 20+ Industry Level Projects, trained 15,000+ students across domains like AI, Computer Vision, IoT and Autonomous Vehicle across companies and universities. \n"
+     ]
+    }
+   ],
+   "source": [
+    "print(lst1[0])\n",
+    "print()\n",
+    "print(lst2[0])\n",
+    "\n",
+    "print('-'*100)\n",
+    "\n",
+    "print(lst1[1])\n",
+    "print()\n",
+    "print(lst2[1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 135,
+   "id": "8350091c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Aditi Gupta \n",
+      "AI Trainer \n",
+      "\n",
+      "  5+ years of experience in the field of AI and Working with Capgemini, Trained working professionals and students from 13+ contries in Data Analytics and Visualization.500 + live sessions delivered, Have excellent expertise in the tools like power bi, tableau, SQL, sap analytics cloud \n",
+      "----------------------------------------------------------------------------------------------------\n",
+      "\n",
+      "Ashish Jangra \n",
+      "Autonomous Vehicle, AI, IoT Consultant \n",
+      "\n",
+      " Developed his own Autonomous Vehicle from scratch, an AI Specialist and Educationalist. Worked on 20+ Industry Level Projects, trained 15,000+ students across domains like AI, Computer Vision, IoT and Autonomous Vehicle across companies and universities. \n",
+      "----------------------------------------------------------------------------------------------------\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in range(len(lst1)):\n",
+    "    \n",
+    "    print(lst1[i])\n",
+    "    print()\n",
+    "    print(lst2[i])\n",
+    "\n",
+    "    print('-'*100)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4d08981e",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

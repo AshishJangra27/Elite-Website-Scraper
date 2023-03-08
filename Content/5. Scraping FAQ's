@@ -1,0 +1,233 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 132,
+   "id": "4c989f53",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import requests\n",
+    "from bs4 import BeautifulSoup\n",
+    "\n",
+    "link = 'https://www.elitetechnogroups.com/internship/advance-python-internship-cum-training-program.php'\n",
+    "res = requests.get(link)\n",
+    "\n",
+    "soup = BeautifulSoup(res.text, 'html.parser')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 141,
+   "id": "bc4d54fd",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "7"
+      ]
+     },
+     "execution_count": 141,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "soup.find_all('div', class_ = 'card faqcategory')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 160,
+   "id": "a70eeeff",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Course Curriculum  ( 8 Questions )\n",
+      "\n",
+      "\n",
+      " 1. I have no prior knowledge, can I take this internship? \n",
+      "\n",
+      "\n",
+      " We understand you are starting your learning journey. Hence, the program is designed to cover the basics - good for even folks with prior knowledge. The only prerequisites are that you understand physics and maths taught till 12th standard or diploma.\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "Doubt & Career Support  ( 4 Questions )\n",
+      "\n",
+      "\n",
+      " 1. What if I have doubts during or after internship?\t \n",
+      "\n",
+      "\n",
+      " We think doubt resolution is the most important part of an internship. Hence, we've three channels for you to get your doubts resolved- \r\n",
+      "1. Ask us doubt on the Video platform itself and we will reply to you there\r\n",
+      "2. A chat group for doubt resolution, you could ask us there\r\n",
+      "3. Live doubt resolution sessions, you could ask your doubts there too!\n",
+      "After the internship:  Definitely, you will have plenty of doubts after the internship and for that, we provide you with a dedicated email id of our experts, you can get their assistance through the mail to clarify all your issues.\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "Certification  ( 7 Questions )\n",
+      "\n",
+      "\n",
+      " 1. What all certificates will I get with this internship? \n",
+      "\n",
+      "\n",
+      " You will get a Completion Certificate and a Project Report.\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "Eligibility Criteria  ( 4 Questions )\n",
+      "\n",
+      "\n",
+      " 1. I'm a fresher/ have no background in Automotive. Can I take this internship?\t \n",
+      "\n",
+      "\n",
+      " In that case, there are more reasons for you to take this internship! This internship is prepared from the basics. We will take you through the fundamentals of building a good understanding of automotive engineering. This will make you ready to take up tougher challenges in this space!\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "Fee-Offers-Referral Cashback  ( 5 Questions )\n",
+      "\n",
+      "\n",
+      " 1. What is Money Back Guarantee?\t \n",
+      "\n",
+      "\n",
+      " Money-back within 10-days of attending the internship if you feel that this internship isn't good and there is another one better than this at a lower price. Show us the other internship and we will give you the money back.\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "Projects & Assignments  ( 2 Questions )\n",
+      "\n",
+      "\n",
+      " 1. What types of projects will I work on during my internship?\t \n",
+      "\n",
+      "\n",
+      " After completion of every module (6-9 videos), you will be given one industry-related project on major concepts you have learned in that particular module.\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "Time Commitment  ( 4 Questions )\n",
+      "\n",
+      "\n",
+      " 1. How much time do I need to commit to the internship daily? How long does it take to complete the internship ?\t \n",
+      "\n",
+      "\n",
+      " You will receive tutorial videos of 30-40 minutes every day.\r\n",
+      "If you have exams or other commitments and miss any video/ assignment you can attempt it later as per your ease because you will have access to the internship for 6 months.\r\n",
+      "Time to completion can vary based on your schedule, but most learners are able to complete it within the internship period itself.\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "for sp in soup.find_all('div', class_ = 'card faqcategory'):\n",
+    "    print(sp.find('h2').text[:-11], \"(\", sp.find('h2').text[-11:],\")\")\n",
+    "    print(sp.find('div', class_= 'card faq').text)\n",
+    "    print()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 152,
+   "id": "0af35006",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "title = soup.find_all('div', class_ = 'card faqcategory')[0].find('h2').text[:-11]\n",
+    "qns   = soup.find_all('div', class_ = 'card faqcategory')[0].find('h2').text[-11:]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 153,
+   "id": "3b5ae1f8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Course Curriculum '"
+      ]
+     },
+     "execution_count": 153,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "title"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 154,
+   "id": "06e906d3",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'8 Questions'"
+      ]
+     },
+     "execution_count": 154,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "qns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8be7714f",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

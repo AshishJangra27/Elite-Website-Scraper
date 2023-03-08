@@ -1,0 +1,9 @@
+ 1. I'm a fresher/ have no background in Automotive. Can I take this internship?	  In that case, there are more reasons for you to take this internship! This internship is prepared from the basics. We will take you through the fundamentals of building a good understanding of automotive engineering. This will make you ready to take up tougher challenges in this space!
+ 2. I don't have a laptop, is it mandatory?   We believe something is better than nothing. 60% of concepts are based on calculations and the 40 percent part is based on design. So, even if you are unable to practice the designing part on a laptop, as you don't have one. No worries! These sessions will be there for you at least for 6 months. So, once your college starts, and you will have access to the CAD lab or any laptop, you can rewatch the sessions and practice.
+ 3. What is the Laptop Configuration?  Minimum RAM: 4 GB
+Minimum Processor - i3 could work, i5 and above is recommended (Intel Processor)
+If AMD Processor - A6 could work, however above it would be better
+Recommended - Have an external mouse during design courses
+ 4. Is there any minimum qualification required to take this internship?  To be eligible for the Internship, the following criteria need to be fulfilled:
+Education Requirement: Should be able to understand Physics and Mathematics of Std. 12th and equivalent program (Diploma/other)
+Course Program: You should successfully complete the Internship.

@@ -1,0 +1,121 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "e0a2f5d6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import requests\n",
+    "from bs4 import BeautifulSoup\n",
+    "\n",
+    "link = 'https://www.elitetechnogroups.com/internship/advance-python-internship-cum-training-program.php'\n",
+    "res = requests.get(link)\n",
+    "\n",
+    "soup = BeautifulSoup(res.text, 'html.parser')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "562d3817",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "database = []\n",
+    "\n",
+    "for sp in soup.find_all('div', class_ = 'card faqcategory'):\n",
+    "    \n",
+    "    file_name = sp.find('h2').text[:-11].replace(' ','')\n",
+    "    \n",
+    "    for s in sp.find_all('div', class_= 'card faq'):\n",
+    "        \n",
+    "        qns.append(s.find('h2').text.split('.')[1].strip())\n",
+    "        ans.append(s.find('p').text)\n",
+    "        \n",
+    "        database.append([s.find('h2').text.split('.')[1].strip(), s.find('p').text, file_name])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "id": "8a003efd",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['I have no prior knowledge, can I take this internship?',\n",
+       " 'We understand you are starting your learning journey. Hence, the program is designed to cover the basics - good for even folks with prior knowledge. The only prerequisites are that you understand physics and maths taught till 12th standard or diploma.',\n",
+       " 'CourseCurriculum']"
+      ]
+     },
+     "execution_count": 42,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "database[0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "2adae97c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['We understand you are starting your learning journey. Hence, the program is designed to cover the basics - good for even folks with prior knowledge. The only prerequisites are that you understand physics and maths taught till 12th standard or diploma.',\n",
+       " \"An Internship is for college students to learn the basics of the Industry. A good starting platform to meet the university's internship requirement along with real learnings.\\n\\r\\nWhereas a Course is much detailed program on the technologies used in the industry. It has industrial projects, much more detailed content, an LoR and career-related sessions. It is meant for students and industry folks who are looking to upgrade themselves for jobs or higher studies.\",\n",
+       " 'Once you have registered for the internship and paid for it, we will share with you the login details to study the portal of Elite Techno Groups where you can access the content.\\xa0',\n",
+       " 'It is a combination of recorded and live interactive sessions with the Experts. Internship content is delivered via recorded videos so that you can have them all the time with you. These will help you plan your learning accordingly given the uncertainties in the college opening and exams!',\n",
+       " 'You will be learning -\\r\\nSolidworks For Design, FEA and other analysis,\\r\\nLotus for suspension analysis,\\r\\nAnsys Fluent for CFD, and\\r\\nAnsys for FEA',\n",
+       " \"If you don't have the software, you can download the software from open-source online sources. Given the minimal fees, the software isn't included in the fees.\",\n",
+       " \"No problem at all. We will teach you from scratch. It doesn't matter if you haven't used any CAD software. Designing will be starting from very basic things like- learning of all the commands used in it, after that we will be teaching you how to design the subsystems as you continue with the course.\",\n",
+       " 'Yes, in fact, the whole course is practically based. Practical means which you practice which could be either Hands-on or on Computer. In the Automotive Industry, work is divided into 2 major domains.\\r\\n1. Engineers who design the vehicles by doing the research as per the market need - vehicle dynamics & design engineer - 80% of Engineers required in this space\\r\\n2. Engineers in manufacturing unit - an automated and outsourced process - require 20% of engineers.']"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "ans"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6ef0d291",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
